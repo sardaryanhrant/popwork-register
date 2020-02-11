@@ -1,0 +1,296 @@
+.mat-group {
+  padding-top: 30px;
+}
+
+::ng-deep .mat-tab-labels {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  .mat-tab-label {
+    width: 24% !important;
+    margin-bottom: 24px;
+  }
+}
+
+.tab-wrapper {
+  color: #acacac;
+  font-family: "Rubik", sans-serif;
+  width: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  height: 80vh;
+  background-color: #f9f9f9;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 50px;
+    letter-spacing: 8px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 16px;
+    letter-spacing: 1.8px;
+    font-weight: 400;
+    color: #767676;
+  }
+}
+.label-index {
+  font-size: 11px;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  border-radius: 100%;
+  background-color: #999999;
+  margin-right: 8px;
+  color: white;
+  line-height: 24px;
+}
+::ng-deep.mat-tab-label.mat-tab-label-active {
+  .label-index {
+    background-color: #e4698c;
+  }
+  .label {
+    color: #999999;
+  }
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  font-style: #979797;
+  letter-spacing: 1.8px;
+}
+
+.register {
+  height: 60px;
+  width: 320px;
+  border-radius: 8px;
+}
+
+.wrapper-start {
+  display: flex !important;
+  margin-top: -260px;
+  align-items: flex-start;
+  height: 800px;
+}
+
+.set-popwork {
+  color: #acacac;
+  font-family: "Rubik", sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  height: auto;
+  background-color: #f9f9f9;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 50px;
+    letter-spacing: 8px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 16px;
+    letter-spacing: 1.8px;
+    font-weight: 400;
+    color: #767676;
+  }
+}
+
+.setup {
+  box-sizing: border-box;
+  color: #acacac;
+  font-family: "Rubik", sans-serif;
+  margin: auto;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+
+  h1 {
+    font-size: 50px;
+    letter-spacing: 8px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 18px;
+    letter-spacing: 1.8px;
+    font-weight: 500;
+  }
+}
+
+.form {
+  padding-left: 60px;
+  margin: auto;
+  font-size: 18px;
+  font-weight: inherit;
+  font-style: rgb(187, 177, 177);
+  letter-spacing: 2px;
+  width: 70%;
+  height: 70px;
+  background-color: white;
+  border-radius: 10px;
+  color: #bbb1b1;
+  text-transform: lowercase;
+  border: 2px solid rgb(187, 177, 177);
+  background-image: url("/assets/search-icon.png");
+  background-size: 46px;
+  background-repeat: no-repeat;
+  background-position: left;
+  &:focus {
+    outline: none;
+  }
+}
+
+.select {
+  padding-bottom: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #767676;
+  letter-spacing: 1.8px;
+}
+
+.radio-group {
+  margin-left: -20px;
+}
+
+.rad-button {
+  font-size: 14px;
+  padding: 0 0 40px 30px;
+  letter-spacing: 1.8px;
+  color: #767676;
+}
+
+.pink {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  color: #e4698c !important;
+}
+
+.checkbox {
+  padding-bottom: 30px;
+  color: #767676;
+  letter-spacing: 1.8px;
+}
+.check {
+  padding-left: 20px;
+}
+
+.email-input {
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.email {
+  padding-left: 20px;
+  letter-spacing: 1.8px;
+//   width: 600px;
+  max-width: 100%;
+  height: 40px;
+  border: 2px solid #dedede;
+  border-radius: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+
+input:invalid:not(.ng-pristine) {
+  border: 3px solid red;
+}
+
+.input {
+  width: 80%;
+  padding-bottom: 20px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.input1 {
+  align-items: flex-start;
+  width: 40%;
+  min-width: 240px;
+  height: 44px;
+  border: 2px solid #dedede;
+  border-radius: 10px;
+  padding-left: 10px;
+  float: left;
+  letter-spacing: 1.8px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.input2 {
+  align-items: flex-end;
+  min-width: 240px;
+  width: 40%;
+  height: 44px;
+  border: 2px solid #dedede;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-left: 20px;
+  letter-spacing: 1.8px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.finish {
+  width: 140px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #e4698c;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  color: white;
+}
+.welcome {
+  font-weight: 500 !important;
+  color: #acacac !important;
+  letter-spacing: 4px !important;
+  font-size: 18px !important;
+}
+
+::ng-deep .pac-container {
+  border-radius: 10px;
+  border: 2px solid #bbb1b1;
+  margin-top: 8px;
+  .pac-item {
+    height: 60px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+  }
+  .pac-item-query {
+    display: block;
+    color: #e4698c;
+    font-size: 18px;
+    text-transform: lowercase;
+  }
+  .pac-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    margin-top: 10px;
+    display: inline-block;
+    vertical-align: top;
+    background: url("/assets/pin.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 16px;
+  }
+}

@@ -1,0 +1,93 @@
+<div>
+  <mat-tab-group mat-align-tabs="center" class="mat-group">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="label-index">1</span>
+        <p class="label">REGISTER</p>
+      </ng-template>
+      <div class="tab-wrapper">
+        <p >Keep it simple.. login with your existing google account.</p>
+        <a href="http://localhost:3001/login"> <img class="register" src="assets/signup-linkedin.png" /></a>
+       
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="label-index"> 2 </span>
+        <p class="label">FIND YOUR SPACE</p>
+      </ng-template>
+      <div class="tab-wrapper wrapper-start">
+         
+          <input class="form"
+          placeholder="enter the name or address of your space"
+               matGoogleMapsAutocomplete
+               [country]="'us'"
+               (onAutocompleteSelected)="onAutocompleteSelected($event)"
+               (onLocationSelected)="onLocationSelected($event)">
+      
+      </div>
+    </mat-tab>
+
+    <mat-tab>      
+      <ng-template mat-tab-label>
+        <span class="label-index"> 3 </span>
+        <p class="label">SETUP YOUR POPWORK</p>
+      </ng-template>
+      <div class="set-popwork" >
+        <form [formGroup]="popForm">
+          <div class="setup">
+        <span class="select">SELECT ONE:</span>
+        <mat-radio-group class="radio-group" formControlName="placeType">
+          <mat-radio-button class="rad-button" value="1">CO-WORKING SPACE</mat-radio-button>
+          <mat-radio-button class="rad-button" value="2">COFFE SHOP</mat-radio-button>
+          <mat-radio-button class="rad-button" value="3">OFFICE SPACE</mat-radio-button>
+          <mat-radio-button class="rad-button" value="4">OTHER</mat-radio-button>
+        </mat-radio-group>
+        <div class="select">
+        <span class="select">MAXIMUM NUMBER OF TIMES </span><span class="pink">PER YEAR</span><span class="select"> A MEMBER CAN VISIT?</span>
+      </div>
+        <mat-radio-group class="radio-group"  formControlName="visitsPerYear">
+          <mat-radio-button class="rad-button" value="5">5</mat-radio-button>
+          <mat-radio-button class="rad-button" value="10">10</mat-radio-button>
+          <mat-radio-button class="rad-button" value="15">15</mat-radio-button>
+          <mat-radio-button class="rad-button" value="20">20</mat-radio-button>
+          <mat-radio-button class="rad-button" value="25">25</mat-radio-button>
+          <mat-radio-button class="rad-button" value="50">50</mat-radio-button>
+          <mat-radio-button class="rad-button" value="100">100</mat-radio-button>
+          <mat-radio-button class="rad-button" value="200">200</mat-radio-button>
+        </mat-radio-group>
+        <span class="select">WHAT DAYS OF THE WEEK AMEMBER CAN MAKE A RESERVATION AT THE SPACE</span>
+        <div class="checkbox">
+        <mat-checkbox formControlName="weekdays">weekdays</mat-checkbox> 
+        <mat-checkbox formControlName="weekends" class="check" >weekends</mat-checkbox>
+      </div>
+        <span class="select">WE WILL NOTIFY YOU VIA EMAIL WHEN A MEMBER MAKES A RESERVATION.</span>
+        <div class="email-input">
+          <input matInput placeholder="enter a valid email that can receive and confirm reservation." type="email" formControlName="emailField" name="email" email class="email" >
+        </div>
+        <span class="select">PRIMARY CONTACT IF WE HAVE ANY QUESTIONS. (THIS INFO IS NOT BE PUBLIC)</span>
+        <div class="input">
+          <input matInput placeholder="full name" type="text" id="name" name="name" formControlName="fullName" class="input1">
+          <input matInput placeholder="mobile number (xxx-xx-xxxx)" class="input2" type="text" id="phone-number" name="quantity" formControlName="phoneNumber" >
+        </div>
+        <button mat-button class="finish" (click)="saveSpace()">FINISH</button>
+      </div>
+    </form>  
+      
+    </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="label-index"> 4 </span>
+        <p class="label">CONGRATULATIONS</p>
+      </ng-template>
+      <div class="tab-wrapper" >
+        <h1>WELCOME TO POPWORK</h1>
+        <p class="welcome"> [Your account is pending verification]</p>
+        <p class="welcome">We will call you within 24 hours to verify.</p>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
