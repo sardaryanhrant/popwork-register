@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
 import { NumberSymbol } from "@angular/common";
+import { setToLocalStorage, getFromLocalStorage } from './utils/local-storage';
 
 @Component({
   selector: "app-root",
@@ -12,7 +13,8 @@ import { NumberSymbol } from "@angular/common";
 export class AppComponent implements OnInit {
   title = "popwork-register";
   popForm: FormGroup;
-  token;
+  currentTabIndex = 0;
+  placeData: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -34,9 +36,26 @@ export class AppComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       if (params.token) {
         console.log(JSON.parse(params.token + '"}}'));
-        this.token = JSON.parse(params.token + '"}}').jwt;
+        const token = JSON.parse(params.token + '"}}').jwt;
+        setToLocalStorage('popworkToken', token)
+        // Set to local storage
+        this.currentTabIndex = 1;
       }
     });
+  }
+
+  onAutocompleteSelected(e) {
+    console.log(e)
+    this.placeData.name = e.name;
+    this.placeData.place_id = e.place_id;
+    this.placeData.vicinity = e.formatted_address;
+    this.currentTabIndex = 2;
+  }
+
+  onLocationSelected(e) {
+    console.log(e)
+    this.placeData.lat = e.latitude;
+    this.placeData.lng = e.longitude;
   }
 
   public handleAddressChange(address) {
@@ -45,11 +64,16 @@ export class AppComponent implements OnInit {
 
   saveSpace() {
     console.log(this.popForm.value);
+    this.placeData = {...this.popForm.value, ...this.placeData};
+    console.log(this.placeData);
     this.http
-      .post("http://localhost:3001/register", this.popForm.value)
+      .post("https://popwork-dev-api.herokuapp.com/register", this.placeData, {headers: {
+        'Authorization':  `Bearer ${getFromLocalStorage('popworkToken')}`
+      }})
       .subscribe(
         res => {
           // Tabview switch to last tab
+          this.currentTabIndex = 3;
         },
         error => {
           // alert('error')
