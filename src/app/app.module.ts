@@ -33,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatGoogleMapsAutocompleteModule, 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC7R7Vy2n5iMTVYI7Bn_9AE38IxTXAhsOs',
+      apiKey: 'AIza......',
       libraries: ['places']
     }),
   ],
